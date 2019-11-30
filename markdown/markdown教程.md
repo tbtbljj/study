@@ -2,7 +2,7 @@
 markdown:
 * 轻量级**标记语言**，允许人们使用易读易写的**纯文本格式**编写文档
 * 可导出HTML、word、图像、pdf等多种格式的文档
-* 文档后缀：`.md`，`.markdown`
+* 文档后缀：`.md`，`.markdown`  
 **理解**：markdown是一种标记语言，能被用来编写文档
 ---
 ## markdown 应用
