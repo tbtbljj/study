@@ -13,3 +13,6 @@ markdown:
 ## typora 编辑器
 * 支持MacOS、Windows、Liunx平台
 * [官网](https://typora.io/)
+---
+**Reference**
+1. [菜鸟教程](https://www.runoob.com/markdown/md-tutorial.html)
