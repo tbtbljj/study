@@ -12,4 +12,4 @@ markdown:
 ---
 ## typora 编辑器
 * 支持MacOS、Windows、Liunx平台
-* [官网]（https://typora.io/）
+* [官网](https://typora.io/)
