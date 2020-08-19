@@ -22,4 +22,26 @@
 * tinyint, smallint, int, bigint, float, decimal, boolean, string
 * struct, array, map # 符合数据类型
 
+# 复合数据类型
+## array
+* create table person (name string, work_locations array<string>)
+  row format delimited
+  fields terminated by '\t'
+  collection items terminated by ',';
+
+# 常用函数
+* if (条件表达式, A, B); # if条件语句，若满足条件则返回A，否则返回B
+* case a when b then c when d then e else f end; # case条件语句，当a为b时返回c，当a为d时返回e，否则返回f
+* coalesce(v1, v2, v3, ...); # 返回列表中第一个非空元素，若所有值均为空，则返回null
+* concat(string A, string B, string C, ...); # 字符串连接
+* concat_ws(string sep, string A, string B, string C, ...); # 自定义分隔符sep的字符串连接
+* length(); # 返回字符串的长度
+* reverse(); # 反转字符串
+* cast(表达式 as 数据类型); # 类型转换
+
+# HQL与SQL的差异点
+
+# 基本概念
+* hive：
+
 
