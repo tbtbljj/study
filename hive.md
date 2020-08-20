@@ -43,5 +43,26 @@
 
 # 基本概念
 * hive：
+  * 基于hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库库表，并提供类SQL查询功能
+  * 用户接口：CLI，shell命令行
+  * 元数据存储：
+    * 通常是存储在关系数据库，如MySQL、derby中
+    * hive的元数据：表名，表的列、分区及其属性，表的属性（是否为外部表），表的数据所在目录等
+  * HQL查询结果存储在hdfs中，并随后mapreduce调用执行
+  * table：
+    * hive中的table和数据库中的table在概念上是类似的，每一个table在hive中都有一个相应的目录存储数据
+  * partition：
+    * partition对应于数据库中的partition列的密集索引
+    * 但是，hive中partition的组织方式和和数据库很不相同
+    * hive表中的一个partition对应于表下的一个目录，所有partition的数据都存储在对应的目录中
+  * buckets:
+    * buckets对指定列计算hash，根据hash值切分数据。目的是为了并行，每一个bucket对应一个文件
+
+# 实际使用
+* 增加分区：
+  * insert overwrite table 表名 partition (day = '${之前的日期}')
+* 建表语句：
+
+* 
 
 
