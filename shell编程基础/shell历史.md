@@ -30,3 +30,14 @@
     * bash和sh存在很多差异：
       * bash扩展了一些命令和参数
       * bash并不完全兼容sh
+* 用户在命令行输入命令后。一般情况下shell会fork并exec该命令
+  * shell的内建命令除外：
+    * 执行内建命令相当于调用shell进程中的一个函数，并不创建新的进程
+  * 内建命令：
+    * 如：cd、alias、exit等
+    * 凡是用which命令查不到程序文件所在位置的命令都是内建命令（？？？存疑）
+  * 内建命令会有exit status，通常也用0表示成功非0表示失败，可以用特殊变量$?读出
+```
+[tbtbljj@tbtbljj ~]$ echo $SHELL
+/bin/bash
+```
