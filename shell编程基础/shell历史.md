@@ -7,3 +7,26 @@
   * shell脚本是解释执行的，无需编译
   * shell程序从脚本中一行行读取并执行这些命令，相当于用户把脚本中的命令一行行敲到shell提示符下执行
 # shell的历史：
+* UNIX系统上的shell：
+  * sh (Bourne shell)：
+    * Steve Bourne开发
+    * 各种UNIX系统都配有sh
+  * csh (C shell)：
+    * Bill Joy开发，随BSD UNIX发布
+    * 流程控制语句类似c语言
+    * 支持很多Bourne shell所不支持的功能：作业控制、命令历史、命令行编辑
+  * ksh (Korn shell)：
+    * David Korn开发
+    * 向后兼容sh的功能，并添加csh引入的新功能
+    * 目前很多UNIX系统标准配置的shell，在这些系统上的/bin/sh往往是指向/bin/ksh的符号链接
+  * tcsh (TENEX C shell)：
+    * csh增强版本，引入了命令补全等功能
+    * 在FreeBSD、MacOS等系统上替代了csh
+  * bash (Bourne Again shell)：
+    * GNU开发
+    * 主要目标是与POSIX标准保持一致，同时兼顾对sh的兼容
+    * 从csh和ksh借鉴了很多功能，是各种Linux发行版标准配置的shell
+    * 在linux系统上/bin/sh往往是指向/bin/bash的符号链接
+    * bash和sh存在很多差异：
+      * bash扩展了一些命令和参数
+      * bash并不完全兼容sh
