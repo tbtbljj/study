@@ -64,3 +64,15 @@ int main(int argc, char *argv[])
     return 0;
 }
 ```
+* 编写`CMakeLists.txt`
+  * 先编写`CMakeLists.txt`文件，并保存在于`main.cc`源文件同个目录下
+```
+# CMake 最低版本号要求
+cmake_minimum_required (VERSION 2.8)
+
+# 项目信息
+project (Demo1)
+
+# 指定生成目标
+add_executable(Demo main.cc)
+```
