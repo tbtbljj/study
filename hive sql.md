@@ -4,6 +4,8 @@
 * `describe formatted db1.table1;`：
   * 查看建表相关的各种配置属性及默认属性
   * 建表的一些属性（如：location、storage information等）没有直接配置，选择系统默认
+* 默认为内部表
+* 内部表和外部表的区别：
 ```
 create table `db1.table1` (
   `feature1` string,
