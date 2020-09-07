@@ -1,3 +1,16 @@
+## 切换数据库：
+`use 数据库;`
+## 创建表：
+* `describe formatted db1.table1;`：
+  * 查看建表相关的各种配置属性及默认属性
+  * 建表的一些属性（如：location、storage information等）没有直接配置，选择系统默认
+```
+create table `db1.table1` (
+  `feature1` string,
+  `feature2` bigint)
+partitioned by (feature0 string)
+row format delimited fields terminated by ',';
+```
 * show databases; # 查看数据库
 * use 数据库; # 进入某个数据库
 * show tables; # 展示所有表
