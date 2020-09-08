@@ -4,6 +4,7 @@
 * `describe formatted db1.table1;`：
   * 查看建表相关的各种配置属性及默认属性
   * 建表的一些属性（如：location、storage information等）没有直接配置，选择系统默认
+  * 使用'\t'制表符作为字段的分隔符
 * 默认为内部表
 * 内部表和外部表的区别：
 ```
@@ -11,7 +12,7 @@ create table `db1.table1` (
   `feature1` string,
   `feature2` bigint)
 partitioned by (feature0 string)
-row format delimited fields terminated by ',';
+row format delimited fields terminated by '\t';
 ```
 * show databases; # 查看数据库
 * use 数据库; # 进入某个数据库
