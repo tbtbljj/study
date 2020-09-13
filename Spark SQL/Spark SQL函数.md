@@ -49,9 +49,20 @@
     * `avg(x)` - 返回一组数字的平均值
   * `min`：
     * `min(expr)` - 返回`expr`中的最小值
-
-
-
+* 特殊函数：
+  * `array`：
+    * `array(n0, n1...)` - 使用给定元素创建数组
+  * `collect_set`：
+    * `collect_set(x)` - 返回消除重复元素的一组对象
+    * 返回结果中的元素不重复
+  * `collect_list`：
+    * `collect_list(x)` - 返回具有重复项的对象列表
+    * 返回结果中的元素允许重复
+  * `explode`：
+    * `explode(a)` - 将数组`array`的元素分隔为多行，或者将映射`map`的元素分隔为多行和多列
+  * `cast(ele as type)`：将元素`ele`的类型转为`type`
+  * `split`：
+    * `split(str, regex)` - 使用`regex`正则表达式分割`str`，返回字符串数组
 
 * 查询`HiveQL`中的所有函数：`hive> show functions;`
 * 查询`HiveQL`中某个函数的用法：
