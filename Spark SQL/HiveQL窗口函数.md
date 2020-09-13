@@ -33,3 +33,4 @@ ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING（表示当前行到终点）
     * `lead`：
       * `LEAD (scalar_expression [,offset] [,default]) OVER ([query_partition_clause] order_by_clause);` ：lead()函数用于返回后面行的数据
     * `ntile`：
+      * `ntile(n)`：把有序分区的行分配到指定数量的大致相等的组中，每个组的编号从`1`开始。对于每一行，`ntile()`函数返回其所属组的编号
