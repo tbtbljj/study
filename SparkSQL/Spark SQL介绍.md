@@ -13,6 +13,8 @@
   * `Spark SQL`
   * `Hive-on-Spark`
 * `Hadoop`生态体系中：`MapReduce`作底层计算，`HiveQL`，`Redis`
+
+## 特性
 * `Spark SQL`的特性：
   * `Integrated`：集成
     * `Spark`程序（`Spark core`程序）支持`SQL`**查询**
