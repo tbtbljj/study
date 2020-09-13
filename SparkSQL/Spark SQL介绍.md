@@ -24,6 +24,8 @@
       * `Avro`：`Hadoop`的一个数据序列化系统，设计用于支持大批量数据交换的应用
   * `Hive Integration`：`Hive`集成
     * 在现有数据仓库上运行`SQL`或者`HiveQL`查询
-    * 
-  
+    * `Spark SQL`支持`HiveQL`语法以及`Hive SerDes`和`UDF`，允许访问现有的`Hive`仓库
+  * `Standard Connectivity`：
+    * 通过`JDBC、ODBC`连接
+    * 服务器模式为商业智能工具提供了行业标准`JDBC`和`ODBC`的连接
   
