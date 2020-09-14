@@ -32,12 +32,12 @@
     * `CASE a WHEN b THEN c [WHEN d THEN e]* [ELSE f] END` - 当`a=b`返回`c`；当`a=d`返回`e`；否则返回`f`
 * 日期函数：
   * `current_date`：
-    * `current_date()`：获取当前的日期，日期格式为标准格式：`xxxx-mm-dd`
+    * `current_date()`：获取当前的日期，日期格式为标准格式：`yyyy-mm-dd`
   * `current_timestamp`：
-    * `current_timestamp()`：获取当前日期的时间戳，格式为：`xxxx-mm-dd hh:mm:ss.xxx`
+    * `current_timestamp()`：获取当前日期的时间戳，格式为：`yyyy-mm-dd hh:mm:ss.xxx`
   * `add_months(start_date, num_months)`：
     * `add_months(start_date, num_months)` - 返回`start_date`之后`num_months`个月的日期
-    * `start_date: xxxx-mm-dd`，返回结果`dd`不变，月份对`12`取余
+    * `start_date: yyyy-mm-dd`，返回结果`dd`不变，月份对`12`取余
   * `date_add`：
     * `date_add(start_date, num_days)` - 返回`start_date`之后`num_days`天的日期
   * `date_sub`：
@@ -50,7 +50,29 @@
   * `weekofyear`:
     * `weekofyear(date)` - 返回`date`是所在年份的第几个星期
     * 一周开始于星期一，第一周的天数大于3
-
+  * `minuute`：
+    * `minute(param)` - 返回`string/timestamp/interval`中的分钟
+  * `hour`：
+    * `hour(param)` - 返回`string/timestamp/interval`中的小时
+  * `day`：
+    * `day(param)` - 返回`date/timestamp/interval`中的天
+  * `month`：
+    * `month(param)` - 返回`date/timestamp/interval`中的月份
+  * `year`：
+    * `year(param)` - 返回`date/timestamp/interval`中的年份
+  * `date_format`:
+    * `date_format(date/timestamp/string, fmt)` - 返回指定格式的日期
+    * 如：fmt为'yyyy'，则返回年份
+  * `datediff`：
+    * `datediff(date1, date2)` - 返回`date1`和`date2`之间的天数（`date1 - date2`）
+  * `to_unix_timestamp`：
+    * `to_unix_timestamp(date[, pattern])` - 返回UNIX timestamp
+    * 如：`select to_unix_timestamp(current_date())`，返回`1600099200`
+  * `from_unixtime`：
+    * `from_unixtime(unix_time, format)` - 返回指定格式的时间
+    * 如：`select from_unixtime(1600099200)`，返回`2020-09-15 00:00:00`；`select from_unixtime(1600099200, 'yyyy')`，返回`2020`
+  * `to_date`：
+    * `to_date(datetime)` - 返回`datetime`中的日期部分
 * 字符串：
 * 统计函数：
   * 聚合函数：将多行数据合成一行
