@@ -1,3 +1,5 @@
+pycharm : ctrl+shift+f全局查找某个关键字
+
 create table if not exists
 grouping sets
 数据类型：struct map
