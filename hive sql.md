@@ -1,3 +1,9 @@
+create table if not exists
+grouping sets
+数据类型：struct map
+in ()
+
+
 ## 切换数据库：
 `use 数据库;`
 ## 创建表：
