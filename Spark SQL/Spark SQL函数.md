@@ -30,7 +30,27 @@
     * `IF()`函数返回数值或者字符串值，具体取决于使用它的上下文
   * `case when`：
     * `CASE a WHEN b THEN c [WHEN d THEN e]* [ELSE f] END` - 当`a=b`返回`c`；当`a=d`返回`e`；否则返回`f`
-* 日期：
+* 日期函数：
+  * `current_date`：
+    * `current_date()`：获取当前的日期，日期格式为标准格式：`xxxx-mm-dd`
+  * `current_timestamp`：
+    * `current_timestamp()`：获取当前日期的时间戳，格式为：`xxxx-mm-dd hh:mm:ss.xxx`
+  * `add_months(start_date, num_months)`：
+    * `add_months(start_date, num_months)` - 返回`start_date`之后`num_months`个月的日期
+    * `start_date: xxxx-mm-dd`，返回结果`dd`不变，月份对`12`取余
+  * `date_add`：
+    * `date_add(start_date, num_days)` - 返回`start_date`之后`num_days`天的日期
+  * `date_sub`：
+    * `date_sub(start_date, num_days)` - 返回`start_date`之前`num_days`天的日期
+  * `next_day`：
+    * `next_day(start_date, day_of_week)` - 返回`start_date`之后最先到星期`day_of_week`的日期
+    * `day_of_week`取值：`mon、tue、wed、thu、fri、sat、sun`
+  * `dayofmonth`：
+    * `dayofmonth(param)` - 返回`date/timestamp`所在月份的第几天
+  * `weekofyear`:
+    * `weekofyear(date)` - 返回`date`是所在年份的第几个星期
+    * 一周开始于星期一，第一周的天数大于3
+
 * 字符串：
 * 统计函数：
   * 聚合函数：将多行数据合成一行
