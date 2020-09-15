@@ -73,7 +73,15 @@
     * 如：`select from_unixtime(1600099200)`，返回`2020-09-15 00:00:00`；`select from_unixtime(1600099200, 'yyyy')`，返回`2020`
   * `to_date`：
     * `to_date(datetime)` - 返回`datetime`中的日期部分
-* 字符串：
+* 字符串函数：
+  * `instr`：
+    * `instr(str, substr)`：返回`substr`在`str`中第一次出现的索引
+    * 索引从`1`开始，若不存在则返回`0`
+  * `length`：
+    * `length(str)` - 返回字符串`str`的长度
+  * `substr/substring`：
+    * `substr/substring(str, pos[, len])`：返回字符串`str`的子字符串，从`pos`开始，长度为`len`
+    * `len`缺省表示从`pos`位置到字符串末尾
 * 统计函数：
   * 聚合函数：将多行数据合成一行
   * `index(a, n)` - 返回`a`的第`n`个元素
