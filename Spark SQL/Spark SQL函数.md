@@ -113,6 +113,8 @@
   * `cast(ele as type)`：将元素`ele`的类型转为`type`
   * `split`：
     * `split(str, regex)` - 使用`regex`正则表达式分割`str`，返回字符串数组
+  * `concat_ws`：
+    * `concat_ws(separator, [string | array(string)]+)` - `concat with separator`：返回有分隔符`separator`分隔的字符串组的级联
 
 * 查询`HiveQL`中的所有函数：`hive> show functions;`
 * 查询`HiveQL`中某个函数的用法：
