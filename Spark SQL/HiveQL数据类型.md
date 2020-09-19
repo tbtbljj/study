@@ -106,6 +106,7 @@ CREATE TABLE foo (bar CHAR(10))
   * Date类型取值范围：从0000-01-01到9999-12-31
   * Hive 0.12.0引入了Date类型
   * Date类型只能在Date、Timestamp、string之间进行转换
+  
 |Date类型的有效转换|结果|
 |-|-|
 |cast(date as date)|相同的date值|
