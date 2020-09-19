@@ -101,8 +101,8 @@ CREATE TABLE foo (bar CHAR(10))
   * Hive 0.8.0引入了timstamp类型
   
 * Date：
-  * Date值描述特定的年月日，格式：YYYY-MM-DD，如：'2013-01-01'
-  * Date类型不能一天中的时间
+  * Date值描述特定的年月日，格式：YYYY-MM-DD，如：2013-01-01
+  * Date类型不包含一天中的时间
   * Date类型取值范围：从0000-01-01到9999-12-31
   * Hive 0.12.0引入了Date类型
   * Date类型只能在Date、Timestamp、string之间进行转换
