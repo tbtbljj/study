@@ -5,11 +5,11 @@
 
 ## 函数分类：
 * 内置函数、自定义函数（`UDF`）
-### 功能上分类：
-* 数值：
+* 数学函数：
   * `round`：
     * `round(x[, d])` - 将`x`四舍五入到小数点后`d`位
     * 默认保留`0`位小数，即返回结果为整数
+    * `d`为`0`，表示保留个位数；`d`为`-1`，表示保留十位数；...
   * `floor`：
     * `floor(x)` - 求不大于`x`的最大整数
   * `ceil`：
@@ -19,13 +19,12 @@
     * `seed`：
       * 第一次定义：将`seed`与具体的伪随机数绑定
       * 非第一次：返回`seed`绑定的伪随机数
-* 数学：
   * `abs`:
     * `abs(x)` - 返回`x`的绝对值
   * `pow`：
     * `pow(x1, x2)` - 返回`x1`的`x2`次方
     * 支持负数、小数
-* 条件：
+* 条件函数：
   * `if`：
     * `IF(expr1,expr2,expr3)` - 如果`expr1`为真`(expr1 <> 0 and expr1 <> NULL)`，那么返回`expr2`，否则返回`expr3`
     * `IF()`函数返回数值或者字符串值，具体取决于使用它的上下文
@@ -75,6 +74,10 @@
   * `to_date`：
     * `to_date(datetime)` - 返回`datetime`中的日期部分
 * 字符串函数：
+  * `lower`：
+    * `lower(str)` - 将`str`中所有的字符转为小写并返回
+  * `upper`：
+    * `upper(str)` - 将`str`中所有的字符转为大写并返回
   * `instr`：
     * `instr(str, substr)`：返回`substr`在`str`中第一次出现的索引
     * 索引从`1`开始，若不存在则返回`0`
@@ -83,6 +86,17 @@
   * `substr/substring`：
     * `substr/substring(str, pos[, len])`：返回字符串`str`的子字符串，从`pos`开始，长度为`len`
     * `len`缺省表示从`pos`位置到字符串末尾
+  * `concat`：
+    * `concat(str1, str2, ... strN)` - 返回`str1, str2, ... strN`的拼接结果
+  * `trim`：
+    * `trim(str)` - 删除`str`中开头和结尾的空白字符（`space characters`）
+  * `lpad`：
+    * `lpad(str, len, pad)` - 将`str`左边用`pad`填充至`len`个字符，并返回`str`
+    * 相当于将`pad`无限复制并连接在一起，取其前几位填充在`str`的左边，让`str`最终的字符个数为`len`
+  * `rpad`：
+    * `rpad(str, len, pad)` - 将`str`右边用`pad`填充至`len`个字符，并返回`str`
+    * 相当于将`pad`无限复制并连接在一起，取其前几位填充在`str`的右边，让`str`最终的字符个数为`len`  
+ 
 * 统计函数：
   * 聚合函数：将多行数据合成一行
   * `index(a, n)` - 返回`a`的第`n`个元素
@@ -111,7 +125,8 @@
     * 返回结果中的元素允许重复
   * `explode`：
     * `explode(a)` - 将数组`array`的元素分隔为多行，或者将映射`map`的元素分隔为多行和多列
-  * `cast(ele as type)`：将元素`ele`的类型转为`type`
+  * `cast`：
+    * `cast(ele as type)`：将元素`ele`的类型转为`type`
   * `split`：
     * `split(str, regex)` - 使用`regex`正则表达式分割`str`，返回字符串数组
   * `concat_ws`：
