@@ -20,10 +20,11 @@ FROM table_reference
       * `is not NULL`
 * `nvl()`函数：
   * `nvl(value, default_value)` - 若`value`为`null`则返回`default_value`，否则返回`value`
-* `DISTINCT`：
+* `DISTINCT`关键字：
   * `DISTINCT col1, col2, ...`：输出`col1, col2, ...`所有不同的组合
-* `WHERE`：
+* `WHERE`子句：
   * `WHERE`子句对`FROM`后面表中的记录先进行过滤，`SELECT`查询的范围是满足`WHERE`子句过滤条件的那一部分记录
+  * `WHERE`子句后面可以跟上多个过滤条件，过滤条件之间用逻辑运算符连接，如：`AND、OR`
 
 
 
