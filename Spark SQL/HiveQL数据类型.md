@@ -113,38 +113,3 @@ CREATE TABLE foo (bar CHAR(10))
 |cast(string as date)|若string的形式为'YYYY-MM-DD'，则返回与该年月日对应的date值；若string值不是上述格式，则返回NULL|
 |cast(date as timestamp)|timestamp值对应于date值的年月日，时间为当地时区的午夜|
 |cast(date as string)|date值中的年月日格式化为string值，形式为：'YYYY-MM-DD'|
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
