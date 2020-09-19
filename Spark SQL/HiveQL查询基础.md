@@ -8,7 +8,7 @@ FROM table_reference
 [CLUSTER BY col_list | [DISTRIBUTE BY col_list] [SORT BY col_list] | [ORDER BY col_list]]
 [LIMIT number]
 ```
-* 查询`table`的基本信息（字段名称、字段类型等）：`hive> desc table_name;`
+* 查询`table`的基本信息（字段名称、字段类型、分区名称、分区类型等）：`hive> desc table_name;`
 * `Hive`中的绝大部分查询都会转化为`MapReduce`作业
 * 查询整张表的数据：`hive> select * from table_name;`
 * 查询`table`的部分字段数据：`hive> select col1, col2, ..., expr1, expr2, ... from table_name;`
