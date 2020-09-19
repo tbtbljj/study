@@ -63,6 +63,7 @@
 
 * String：
   * string值可以用单引号（'）或者双引号（"）表示
+  * string值中的字母区分大小写
   * Hive uses C-style escaping within the strings
   
 * Varchar：
