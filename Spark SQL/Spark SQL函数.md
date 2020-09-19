@@ -68,7 +68,7 @@
   * `datediff`：
     * `datediff(date1, date2)` - 返回`date1`和`date2`之间的天数（`date1 - date2`）
   * `to_unix_timestamp`：
-    * `to_unix_timestamp(date[, pattern])` - 返回UNIX timestamp
+    * `to_unix_timestamp(date[, pattern])` - 返回`UNIX timestamp`
     * 如：`select to_unix_timestamp(current_date())`，返回`1600099200`
   * `from_unixtime`：
     * `from_unixtime(unix_time, format)` - 返回指定格式的时间
