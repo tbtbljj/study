@@ -18,7 +18,7 @@
 * `Spark SQL`的特性：
   * `Integrated`：集成
     * `Spark`程序（`Spark core`程序）支持`SQL`**查询**
-    * `Spark SQL`支持在Spark`程序中使用`SQL`或者`DataFrame API`查询结构化数据
+    * `Spark SQL`支持在`Spark`程序中使用`SQL`或者`DataFrame API`查询结构化数据
       * `Spark`第一代数据模型：`RDD`，第二代数据模型：`DataFrame`，第三代数据模型：`DataSet`
     * 支持的语言：`Jave、Scala、Python、R`
   * `Uniform Data Access`：统一的数据访问
