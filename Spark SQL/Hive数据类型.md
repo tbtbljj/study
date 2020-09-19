@@ -85,6 +85,48 @@
 CREATE TABLE foo (bar CHAR(10))
 ```
 
+* Timestamp：
+  * 支持传统的UNIX时间戳，可选纳秒精度
+  * 支持的转换：
+    * 整数数值类型：以秒单位的UNIX时间戳
+    * 浮点数值类型：以秒单位的UNIX时间戳，具有小数精度
+    * 字符串：JDBC兼容的java.sql.Timestamp格式"YYYY-MM-DD HH:MM:SS.fffffffff"（9位小数精度）
+  * 没有时区（timezoneless），offset from the UNIX epoch
+  * 提供了跟timezone进行转换的UDFs
+    * to_utc_timestamp
+    * from_utc_timestamp
+  * text文件中的时间戳格式：yyyy-mm-dd hh:mm:ss[.f...]
+    * 若使用其他格式，则声明其为合适的类型（INT, FLOAT, STRING, etc.）并使用UDF将其转化为时间戳
+  * Hive 0.8.0引入了timstamp类型
+  
+* Date：
+  * Date值描述特定的年月日，格式：YYYY-MM-DD，如：'2013-01-01'
+  * Date类型不能一天中的时间
+  * Date类型取值范围：从0000-01-01到9999-12-31
+  * Hive 0.12.0引入了Date类型
+  * Date类型只能在Date、Timestamp、string之间进行转换
+|Date类型的有效转换|结果|
+|-|-|
+|cast(date as date)|相同的date值|
+|cast(timestamp as date)|根据当地时区确定timestamp中的年月日，返回date值|
+|cast(string as date)|若string的形式为'YYYY-MM-DD'，则返回与该年月日对应的date值；若string值不是上述格式，则返回NULL|
+|cast(date as timestamp)|timestamp值对应于date值的年月日，时间为当地时区的午夜|
+|cast(date as string)|date值中的年月日格式化为string值，形式为：'YYYY-MM-DD'|
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 
