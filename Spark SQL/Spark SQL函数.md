@@ -30,6 +30,8 @@
     * `IF()`函数返回数值或者字符串值，具体取决于使用它的上下文
   * `case when`：
     * `CASE a WHEN b THEN c [WHEN d THEN e]* [ELSE f] END` - 当`a=b`返回`c`；当`a=d`返回`e`；否则返回`f`
+  * `coalesce`：
+    * `coalesce(a1, a2, ...)` - 从左到右返回第一个不为`NULL`的参数
 * 日期函数：
   * `current_date`：
     * `current_date()`：获取当前的日期，日期格式为标准格式：`yyyy-mm-dd`
@@ -107,8 +109,8 @@
     * `sum(x)` - 返回一组数据的和
   * `count`：
     * `count(*)` - 返回检索行的总数，包括包含`NULL`的行
-    * `count(expr)` - 返回所提供表达式非空的行数
-    * `count(DISTINCT expr[, expr...])` - 返回所提供表达式非空且唯一的行数
+    * `count(expr)` - 返回所提供表达式**非空**的行数
+    * `count(DISTINCT expr[, expr...])` - 返回所提供表达式**非空且唯一**的行数
   * `max`：
     * `max(expr)` - 返回`expr`中的最大值
   * `avg`：
