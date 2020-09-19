@@ -3,6 +3,9 @@
 * 查询整张表的数据：`hive> select * from table_name;`
 * 查询`table`的部分字段数据：`hive> select col1, col2, ..., expr1, expr2, ... from table_name;`
   * 可以将字段进行某种操作的结果作为新的一列输出
+* 若表达式中某些字段为`NULL`，则其结果为`NULL`
+* `nvl`：
+  * `nvl(value, default_value)` - 若`value`为`null`则返回`default_value`，否则返回`value`
 
 * Hive中的绝大部分查询都会转化为MapReduce作业
 
