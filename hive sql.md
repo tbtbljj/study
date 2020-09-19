@@ -83,7 +83,7 @@ row format delimited fields terminated by '\t';
     * buckets对指定列计算hash，根据hash值切分数据。目的是为了并行，每一个bucket对应一个文件
 
 # 实际使用
-* 增加分区：
+* 更新分区中的数据：
   * insert overwrite table 表名 partition (day = '${之前的日期}')
 * 建表语句：
 
