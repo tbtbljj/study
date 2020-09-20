@@ -75,32 +75,43 @@
     * `-p`或者`--parents`：
       * 若目录存在则不会报错，会将需要的目录（包括父目录）递归创建起来
 
-* `rmdir`：
-  * `remove directory`
-  * 删除一个空的目录
-* `cp`：
-  * `copy`
-  * 复制文件或目录
-* `rm`：
-  * `remove`
-  * 移除文件或目录
-* `mv`：
-  * `move`
-  * 移动文件或目录，或**修改文件或目录的名称**
+* `rmdir`：`remove directory`
+  * 功能：只能删除**空的目录**
+  * 语法：`$ rmdir [options] 目录名称`
+  * 选项与参数：
+    * `-p`或者`--parents`：
+      * 删除空的目录及其空的父目录，如：`$ rmdir -p a/b/c`相当于`$ rmdir a/b/c a/b a`
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+* `cp`：`copy`
+  * 功能：复制文件或目录
+    * 默认情况下，若文件存在则覆盖
+  * 语法：`$ cp [options] source destination`
+  * 选项与参数：
+    * `-i`或者`--interactive`：
+      * 覆盖前提示
+    * `-n`或者`--no-clobber`：
+      * 不覆盖已经存在的文件
+    * `-p`或者`--preserve=mode,ownership,timestamps`：
+      * 将文件的属性一起复制，不使用默认属性（备份常用）
+    * `-r`或者`-R`或者`--recursive`：
+      * 递归地复制目录
+
+* `rm`：`remove`
+  * 移除文件或目录
+  * 语法：`$ rm [options] 文件或目录`
+  * 选项与参数：
+    * `-f`或者`--force`：
+      * 忽略不存在的文件或参数，不提示任何信息
+    * `-i`：
+      * 在每一次移除前均会提示
+    * `-r`或者`-R`或者`--recursive`：
+      * 递归地移除目录中的内容
+
+* `mv`：`move`
+  * 移动文件或目录，或**修改文件或目录的名称**
+  * 语法：`$ mv [options] source destination`
+  * 选项与参数：
+    * `-f`或者`--force`：
+      * 即使目标文件存在，覆盖前也不会出现任何提示
+    * `-i`或者`--interactive`：
+      * 目标文件存在会询问是否覆盖
