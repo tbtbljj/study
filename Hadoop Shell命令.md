@@ -11,7 +11,8 @@
   * 大多数`FS Shell`命令的行为和对应的`Unix Shell`命令类似
   * 出错信息输出到`stderr`，其他信息输出到`stdout`
 
-* 
+* `cat`：
+  * 
 
 
 
