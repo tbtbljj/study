@@ -32,6 +32,7 @@
 * `man`：
   * `$ man 命令`
   * 查看命令的使用文档
+
 * `ls`：`list`
   * 功能：列出目录内容
   * 语法：`$ ls [options] [directory]`
@@ -52,15 +53,28 @@
   * `ll -tr`：
     * 以列表形式，对文件按照修改时间进行升序排序
   
-* `cd`：
-  * `change directory`
-  * 切换目录
-* `pwd`：
-  * `print work directory`
-  * 显示当前的目录
-* `mkdir`：
-  * `make directory`
-  * 创建一个新的目录
+* `cd`：`change directory`
+  * 功能：切换工作目录
+  * 语法：`$ cd [相对路径或者绝对路径]`
+    * 若不加具体的路径参数，则默认切换到用户的家目录`~`
+  * 切换到用户的家目录`~`：`$ cd ~`
+  * 切换到当前目录的上一级目录：`$ cd ..`
+ 
+* `pwd`：`print working directory`
+  * 功能：显示当前工作目录的全名
+  * 语法：`$ pwd [options]`
+
+* `mkdir`：`make directory`
+  * 功能：若目录不存在则创建一个新的目录
+    * 不加`-p`选项的话，若目录存在则报错，且不能创建多级目录，只能在当前目录下创建新的子目录
+  * 语法：`$ mkdir [options] 目录名称`
+  * 选项与参数：
+    * `-m`或者`--mode=MODE`：
+      * 直接配置文件的权限，而不是使用默认权限（umask）
+      * 如，创建一个权限为751的test目录：`$ mkdir -m 751 test`
+    * `-p`或者`--parents`：
+      * 若目录存在则不会报错，会将需要的目录（包括父目录）递归创建起来
+
 * `rmdir`：
   * `remove directory`
   * 删除一个空的目录
