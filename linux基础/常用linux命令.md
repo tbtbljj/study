@@ -15,3 +15,61 @@
 
 
 * `chmod`命令：
+
+
+
+# `Linux`文件与目录管理
+* `Linux`的目录结构：
+  * 树状结构
+  * 最顶级的目录：根目录`/`
+* 路径：
+  * 绝对路径：
+    * 路径由根目录`/`写起，如：`/usr/share/doc`这个目录
+  * 相对路径：
+    * 路径不由根目录`/`写起，如：由`/usr/share/doc`到`/usr/share/man`，可以写成`cd ../man`
+
+## 处理目录的常用命令
+* `man`：
+  * `$ man 命令`
+  * 查看命令的使用文档
+* `ls`：
+  * `list`
+  * 列出目录及文件名
+* `cd`：
+  * `change directory`
+  * 切换目录
+* `pwd`：
+  * `print work directory`
+  * 显示当前的目录
+* `mkdir`：
+  * `make directory`
+  * 创建一个新的目录
+* `rmdir`：
+  * `remove directory`
+  * 删除一个空的目录
+* `cp`：
+  * `copy`
+  * 复制文件或目录
+* `rm`：
+  * `remove`
+  * 移除文件或目录
+* `mv`：
+  * `move`
+  * 移动文件或目录，或**修改文件或目录的名称**
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
