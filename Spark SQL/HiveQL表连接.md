@@ -40,4 +40,30 @@ SELECT *
 FROM A
 WHERE A.a IN (SELECT foo FROM B);
 ```
-
+## `Union`
+* 语法：
+```
+select_statement UNION [ALL | DISTINCT] select_statement UNION [ALL | DISTINCT] select_statement ...
+```
+* 功能：
+  * 将来自多个`SELECT`语句的结果组合为单个结果集
+    * `Hive 1.2.0`之前的版本只支持`UNION ALL`，不能消除重复行
+    * `Hive 1.2.0`及之后的版本，`UNION`默认消除重复行
+* 可选项：
+  * `DISTINCT`：消除重复行
+  * `ALL`：不消除重复行
+* 可以在同一个查询中同时使用`UNION ALL`和`UNION DISTINCT`
+  * `DISTINCT union`覆盖其左侧的所有`ALL union`
+  * `DISTINCT union`两种生成方式：
+    * 显式使用`UNION DISTINCT`
+    * 隐式使用不带`DISTINCT`或者`ALL`关键字的`UNION`
+* `FROM`子句中的`UNI0N`：
+  * 需要在`UNION`结果上进行某些操作
+```
+SELECT *
+FROM (
+  select_statement
+  UNION ALL
+  select_statement
+) unionResult
+```
