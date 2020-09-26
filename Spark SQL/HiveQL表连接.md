@@ -80,3 +80,23 @@ FROM (
     WHERE ac.date = '2008-06-03'
  ) actions JOIN users u ON (u.id = actions.uid) 
 ```
+
+## 公用表表达式(`Common Table Expression, CTE`)
+[公用表表达式](https://cwiki.apache.org/confluence/display/Hive/Common+Table+Expression)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
