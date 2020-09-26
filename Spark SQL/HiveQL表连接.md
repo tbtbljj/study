@@ -53,6 +53,7 @@ select_statement UNION [ALL | DISTINCT] select_statement UNION [ALL | DISTINCT] 
   * `DISTINCT`：消除重复行
   * `ALL`：不消除重复行
 * 可以在同一个查询中同时使用`UNION ALL`和`UNION DISTINCT`
+  * 字段名称和类型以第一个`SELECT`语句为准
   * `DISTINCT union`覆盖其左侧的所有`ALL union`
   * `DISTINCT union`两种生成方式：
     * 显式使用`UNION DISTINCT`
