@@ -20,8 +20,10 @@ message SearchRequest {
   * 上述例子中的所有`field`均为标量类型
 * 复合类型（`composite types`）
 ### 分配`field`编号
-* `message`定义中的每个`field`都有一个不同的编号
-* 
+* `message`定义中的每个`field`都有一个**不同的**编号
+* 这些编号用于标识二进制格式的`message`中的`field`
+* 一旦使用了相应的`message`类型，这些编号不应该更改
+
 
 ## 定义服务（service）
 * 将消息类型用在RPC（远程过程调用）框架中，可以在.proto文件中定义一个RPC service接口
