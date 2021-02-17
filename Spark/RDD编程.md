@@ -37,3 +37,7 @@ pairRdd = sc.parallelize([(1, 1), (1, 4), (3, 9), (2, 16)])
 dct = pairRdd.countByKey()
 print type(dct), dct  # <type 'collections.defaultdict'> defaultdict(<type 'int'>, {1: 2, 2: 1, 3: 1})
 ```
+
+* `saveAsTextFile(path)`：
+
+
