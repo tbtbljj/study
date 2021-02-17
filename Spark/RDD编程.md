@@ -68,3 +68,8 @@ rdd = sc.parallelize(range(10), 3)
 print rdd.collect()  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 print rdd.filter(lambda x: x > 5).collect()  # [6, 7, 8, 9]
 ```
+
+
+
+# 常用`PairRDD`的`Transformation`操作
+`PairRDD`：数据为长度为`2`的`tuple`的`RDD`，其每个数据的第一个元素为`key`，第二个元素为`value`
