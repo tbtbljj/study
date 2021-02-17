@@ -52,3 +52,11 @@ rdd = sc.parallelize(range(10), 3)
 print rdd.collect()  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 print rdd.map(lambda x: x**2).collect()  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 ```
+
+* `filter(f)`：
+  * 返回一个仅包含满足条件的元素的新的RDD
+```
+rdd = sc.parallelize(range(10), 3)
+print rdd.collect()  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print rdd.filter(lambda x: x > 5).collect()  # [6, 7, 8, 9]
+```
