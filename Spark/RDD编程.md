@@ -21,10 +21,19 @@ rdd = sc.parallelize(range(10), 5)
 data = rdd.collect()
 print data  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
+
 * `reduce(f)`：
   * 使用指定的满足交换律和结合律的二元算子，从而减少该`RDD`的元素
 ```
 rdd = sc.parallelize(range(10), 5)
 sum = rdd.reduce(lambda x, y: x + y)
 print type(sum), sum  # <type 'int'> 45
+```
+
+* `countByKey()`：
+  * 计算每个键的元素数量，并将结果（字典数据类型）返回给`master`
+```
+pairRdd = sc.parallelize([(1, 1), (1, 4), (3, 9), (2, 16)])
+dct = pairRdd.countByKey()
+print type(dct), dct  # <type 'collections.defaultdict'> defaultdict(<type 'int'>, {1: 2, 2: 1, 3: 1})
 ```
