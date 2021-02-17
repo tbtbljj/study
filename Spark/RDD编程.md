@@ -2,6 +2,11 @@
 * 两种方式：
   * `textFile`加载本地或者集群文件系统中的数据
   * 用`parallelize`方法将`Driver`中的数据结构并行化成`RDD`
+```
+# 用parallelize方法将Driver中的数据结构生成RDD，第二个参数指定分区数
+rdd = sc.parallelize(range(1, 11), 2)
+print rdd.collect()  # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
 
 
 
