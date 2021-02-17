@@ -21,3 +21,10 @@ rdd = sc.parallelize(range(10), 5)
 data = rdd.collect()
 print data  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
+* `reduce(f)`：
+  * 使用指定的满足交换律和结合律的二元算子，从而减少该`RDD`的元素
+```
+rdd = sc.parallelize(range(10), 5)
+sum = rdd.reduce(lambda x, y: x + y)
+print type(sum), sum  # <type 'int'> 45
+```
