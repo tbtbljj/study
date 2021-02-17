@@ -73,3 +73,9 @@ print rdd.filter(lambda x: x > 5).collect()  # [6, 7, 8, 9]
 
 # 常用`PairRDD`的`Transformation`操作
 `PairRDD`：数据为长度为`2`的`tuple`的`RDD`，其每个数据的第一个元素为`key`，第二个元素为`value`
+* `reduceByKey(f)`：
+  * 对相同`key`对应的`values`应用二元归并操作
+```
+rdd = sc.parallelize([("hello", 1), ("world", 2), ("hello", 3), ("world", 5)])
+print rdd.reduceByKey(lambda x, y: x + y).collect()  # [('world', 7), ('hello', 4)]
+```
