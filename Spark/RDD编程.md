@@ -53,6 +53,14 @@ print rdd.collect()  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 print rdd.map(lambda x: x**2).collect()  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 ```
 
+* `flatMap(f)`：
+  * 先将函数`f`应用于该`RDD`的所有元素，再将结果扁平化，从而返回一个新的`RDD`
+```
+rdd = sc.parallelize(["hello world", "hello China"])
+print rdd.map(lambda x: x.split(" ")).collect()  # [['hello', 'world'], ['hello', 'China']]
+print rdd.flatMap(lambda x: x.split(" ")).collect()  # ['hello', 'world', 'hello', 'China']
+```
+
 * `filter(f)`：
   * 返回一个仅包含满足条件的元素的新的RDD
 ```
