@@ -45,3 +45,10 @@ print type(dct), dct  # <type 'collections.defaultdict'> defaultdict(<type 'int'
 
 # 常用`Transformation`操作
 `Transformation`操作具有懒惰执行的特性，只指定新的`RDD`与其父`RDD`的依赖关系，只有当`Action`操作触发到该依赖时，该`Transformation`操作才会被计算
+* `map(f)`：
+  * 通过对该`RDD`的每个元素应用函数`f`，从而返回一个新的`RDD`
+```
+rdd = sc.parallelize(range(10), 3)
+print rdd.collect()  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print rdd.map(lambda x: x**2).collect()  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
