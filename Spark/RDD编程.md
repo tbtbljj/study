@@ -41,3 +41,7 @@ print type(dct), dct  # <type 'collections.defaultdict'> defaultdict(<type 'int'
 * `saveAsTextFile(path)`：
 
 
+
+
+# 常用`Transformation`操作
+`Transformation`操作具有懒惰执行的特性，只指定新的`RDD`与其父`RDD`的依赖关系，只有当`Action`操作触发到该依赖时，该`Transformation`操作才会被计算
