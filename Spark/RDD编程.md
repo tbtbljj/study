@@ -12,6 +12,12 @@ print rdd.collect()  # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
 # 常用`Action`操作
+`Action`操作将触发基于`RDD`依赖关系的计算
 * `collect()`：
   * 返回包含该`RDD`所有元素的列表
   * 注：该方法应该只在结果数组较小的情况下被使用，因为所有数据被加载到`Driver`的内存中
+```
+rdd = sc.parallelize(range(10), 5)
+data = rdd.collect()
+print data  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
