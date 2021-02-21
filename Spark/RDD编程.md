@@ -102,3 +102,10 @@ print rdd  # [[6, 7, 8, 9], [3, 4, 5], [], [0, 1, 2]]
 rdd = sc.parallelize([("a", 1), ("a", 1), ("a", 2), ("c", 3)]).repartition(2).glom().collect()
 print rdd  # [[('a', 1), ('a', 1)], [('a', 2), ('c', 3)]]
 ```
+
+* `partitionBy()`：
+  * 按key进行shuffle，相同key一定在同一个分区
+```
+rdd = sc.parallelize([("a", 1), ("a", 1), ("a", 2), ("c", 3)]).partitionBy(2).glom().collect()
+print rdd  # [[('a', 1), ('a', 1), ('a', 2), ('c', 3)], []]
+```
