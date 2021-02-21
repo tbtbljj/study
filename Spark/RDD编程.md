@@ -79,3 +79,10 @@ print rdd.filter(lambda x: x > 5).collect()  # [6, 7, 8, 9]
 rdd = sc.parallelize([("hello", 1), ("world", 2), ("hello", 3), ("world", 5)])
 print rdd.reduceByKey(lambda x, y: x + y).collect()  # [('world', 7), ('hello', 4)]
 ```
+
+
+
+# 分区操作
+* 分区操作：
+  * 改变分区操作
+  * 针对分区执行的转换操作
