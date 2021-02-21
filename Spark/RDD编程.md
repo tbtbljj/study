@@ -92,3 +92,13 @@ print rdd.reduceByKey(lambda x, y: x + y).collect()  # [('world', 7), ('hello', 
 rdd = sc.parallelize(range(10), 2).glom().collect()
 print rdd  # [[0, 1, 2, 3, 4], [5, 6, 7, 8, 9]]
 ```
+
+* `repartition()`：
+  * 按随机数进行shuffle，相同key不一定在同一个分区，可以增加分区
+```
+rdd = sc.parallelize(range(10), 3).repartition(4).glom().collect()
+print rdd  # [[6, 7, 8, 9], [3, 4, 5], [], [0, 1, 2]]
+
+rdd = sc.parallelize([("a", 1), ("a", 1), ("a", 2), ("c", 3)]).repartition(2).glom().collect()
+print rdd  # [[('a', 1), ('a', 1)], [('a', 2), ('c', 3)]]
+```
