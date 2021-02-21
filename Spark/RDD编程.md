@@ -86,3 +86,9 @@ print rdd.reduceByKey(lambda x, y: x + y).collect()  # [('world', 7), ('hello', 
 * 分区操作：
   * 改变分区操作
   * 针对分区执行的转换操作
+* `glom()`：
+  * 将一个分区内的数据转换为一个列表，作为`RDD`的一行
+```
+rdd = sc.parallelize(range(10), 2).glom().collect()
+print rdd  # [[0, 1, 2, 3, 4], [5, 6, 7, 8, 9]]
+```
