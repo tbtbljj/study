@@ -91,6 +91,9 @@
     * `len`缺省表示从`pos`位置到字符串末尾
   * `concat`：
     * `concat(str1, str2, ... strN)` - 返回`str1, str2, ... strN`的拼接结果
+  * `A || B`:
+    * `operand types`：字符串
+    * `description`：连接操作数，`concat(A, B)`的简写，`Hive 2.2.0`支持
   * `trim`：
     * `trim(str)` - 删除`str`中开头和结尾的空白字符（`space characters`）
   * `lpad`：
