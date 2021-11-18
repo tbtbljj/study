@@ -1,4 +1,6 @@
 # `Spark SQL`函数
+[Language Manual UDF](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-StringOperators)
+
 ## 说明：
 * `SQL`中都有函数的概念，对应于其他编程语言中的方法/函数
 * `Spark SQL`的函数与`HiveQL`的函数是通用的
