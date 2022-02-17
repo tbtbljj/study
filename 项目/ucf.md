@@ -5,11 +5,25 @@
 * 模型网络(双塔)
   * 批处理(假设batch大小为B)
   * user侧
-    * sparse特征映射为embedding向量(假设维度为E)
+    * 将sparse特征映射为embedding向量(假设维度为E)
     * 将每个sparse特征(假设U个user特征)对应的embedding向量进行concat操作，维度为[B, U*E]
+    * bn操作，维度为[B, U*E]
+      * tf.layers.batch_normalization()
+    * reshape操作，维度为[B, U, E]
+      * tf.reshape()
+    * average pooling操作，维度为[B, E]
+      * 对相同样本的不同特征对应的embedding进行取平均操作
+      * tf.reduce_mean()
   * item侧
-    * sparse特征映射为embedding向量(假设维度为E)
+    * 将sparse特征映射为embedding向量(假设维度为E)
     * 将每个sparse特征(假设I个item特征)对应的embedding向量进行concat操作，维度为[B, I*E]
+    * bn操作，维度为[B, I*E]
+      * tf.layers.batch_normalization()
+    * reshape操作，维度为[B, I, E]
+      * tf.reshape()
+    * average pooling操作，维度为[B, E]
+      * 对相同样本的不同特征对应的embedding进行取平均操作
+      * tf.reduce_mean()
 * 模型特征
   * user侧(下面所有特征最终转换为**64位哈希值**)
     * user_inherent(特征取值一般不发生变化)
