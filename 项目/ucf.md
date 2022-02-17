@@ -24,6 +24,27 @@
     * average pooling操作，维度为[B, E]
       * 对相同样本的不同特征对应的embedding进行取平均操作
       * tf.reduce_mean()
+  * 内积
+    * 计算user侧向量与item侧向量的余弦相似度，维度为[B, 1]
+      * tf.keras.layers.Dot()
+  * 位置偏差(position bias)
+    * one hot编码
+      * 下发/展现位置为1，其他位置为0
+      * 维度为[B, P]
+    * 将余弦相似度与位置偏差进行concat操作，维度为[B, 1+P]
+      * tf.concat()
+  * 经过一层全连接网络，维度为[B, 1]
+    * 不使用激活函数
+    * tf.layers.dense()
+  * 值域截断
+    * [-10, 10]
+    * tf.clip_by_value()
+  * 模型输出
+    * sigmoid激活函数
+      * tf.sigmoid()
+  * 损失函数
+    * 交叉熵
+    * 每个样本根据用户行为设置不同的权重，每个样本的loss的加权和作为最终的loss
 * 模型特征
   * user侧(下面所有特征最终转换为**64位哈希值**)
     * user_inherent(特征取值一般不发生变化)
