@@ -4,3 +4,5 @@
 [Stanford CS224W: Machine Learning with Graphs](http://web.stanford.edu/class/cs224w/)
 
 [PGL学习资料](https://baidu-pgl.gz.bcebos.com/pgl-course/lesson_1.pdf)
+
+[PGL图神经网络视频](https://www.bilibili.com/video/BV1rf4y1v7cU?p=20)
